@@ -1,0 +1,410 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+/* nav CSS */
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #00ccff, #0000ff);
+    background-size: 200% 200%; /* huge background size so it can be moved by the background-position */
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+    animation: navbar-animate 6s ease-in-out infinite;  /* calls the animation name, and repeat it infinitely. */
+}
+
+/* nav link title */
+.nav h1 a {
+    text-decoration: none;
+    color: white;
+    transition: .3s ease all;
+}
+
+.nav h1 a:hover {
+    font-size: 25px;
+}
+
+/* other nav links */
+.nav ul {
+    display: flex;
+    gap: 50px;
+}
+
+.nav ul li {
+    list-style-type: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: .3s ease all;
+    font-weight: 500;
+}
+
+.nav ul li a:hover {
+    color: #00ccff;
+    font-size: 19px;
+}
+
+/* nav dropdown CSS */
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    gap: 20px;
+    padding: 20px;
+    width: 150px;
+    background: linear-gradient(90deg, #0088aa, #000097);
+    background-size: 200% 200%; /* huge background size so it can move the background-position */
+    animation: navbar-animate 6s ease-in-out infinite; /* calls the animation name, and repeat it infinitely. */
+}
+
+/* hero section CSS */
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #22343b;
+    background: url('./img/heros.jpg');
+    background-size: cover;
+    color: white;
+    position: relative;
+    z-index: 1;
+    padding: 0 8rem;
+}
+
+/* to make the background darker, so the user can read the content of the website better. */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* adjust the brightness here. */
+    z-index: 2;
+}
+
+/* main heading, description and cta button container */
+section .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    opacity: 0;
+    position: relative;
+    z-index: 3;
+    transform: translateY(50px);
+}
+
+/* main heading */
+section .container h1 {
+    font-size: 50px;
+}
+
+/* short description */
+section .container p {
+    font-size: 25px;
+}
+
+/* cta button */
+section .container button {
+    background-color: #006eff;
+    padding: 15px 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: white;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+/* cta button smooth hover effect */
+section .container button:hover {
+    background-color: transparent;
+    border: 1px solid #006eff;
+    transform: scale(1.1);
+}
+
+/* card container */
+section .card-container {
+    transform: translateY(50px);
+    opacity: 0;
+    position: relative;
+    z-index: 3;
+}
+
+section .card-container .card {
+    position: relative;
+    z-index: 3;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    transition: .2s ease-out all;
+    box-shadow: 7px 6px 20px 10px #0000006b;
+}
+
+section .card-container .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transform: translateZ(20px);
+    transition: .2s ease-out all;
+}
+
+section .card-container .card img:hover {
+    transform: translateZ(30px);
+}
+
+/* about section CSS */
+
+section:nth-child(3)::before {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+section.about {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+/* about description */
+section.about .container-about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+}
+
+section.about .container-about h1 {
+    font-size: 40px;
+}
+
+section.about .container-about p.about-description {
+    font-size: 20px;
+}
+
+/* container for all 3 cards */
+section.about .container-about .card-wrapper {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+/* card settings */
+section.about .container-about .card-wrapper .about-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+    background-size: 200% 200%;
+    animation: navbar-animate 6s infinite;
+    border-radius: 15px;
+}
+
+/* nth:child() is used to specify an element properties across all the class that has the same name. */
+
+/* card 1 */
+section.about .about-card:nth-child(1) {
+    border: 2px solid transparent;
+    background: linear-gradient(90deg, #006eff, #0000ff);
+    transition: .3s ease all;
+}
+
+/* card 2 */
+section.about .about-card:nth-child(2) {
+    border: 2px solid transparent;
+    background: linear-gradient(90deg, #8400ff, #ff0037);
+    transition: .3s ease all;
+}
+
+/* card 3 */
+section.about .about-card:nth-child(3) {
+    border: 2px solid transparent;
+    background: linear-gradient(90deg, #00a9af, #007c25);
+    transition: .3s ease all;
+}
+
+/* card hover effects */
+/* card 1 */
+section.about .about-card:nth-child(1):hover {
+    border: 2px solid #00ccff;
+    transform: scale(1.05);
+}
+
+/* card 2 */
+section.about .about-card:nth-child(2):hover {
+    border: 2px solid #ff00c8;
+    transform: scale(1.05);
+}
+
+/* card 3 */
+section.about .about-card:nth-child(3):hover {
+    border: 2px solid #00ff80;
+    transform: scale(1.05);
+}
+
+/* inside the card */
+section .about-card-description {
+    padding: 0 20px 20px 20px;
+}
+
+section .about-card-description p {
+    font-size: 14px;
+}
+
+section .about-card-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+section .about-card-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0px 0px;
+    object-fit: cover;
+}
+
+/* fade in animation */
+.fade-in {
+    /* !important to override the default state (before the animation is applied) */
+    opacity: 1 !important;
+    transform: translateY(0px) !important;
+    transition: 2s ease-out all; /* transition to make the animation smoother. */
+}
+
+/* navbar background animation */
+/* animating the background-position to create the illusion of the gradient color changing. */
+@keyframes navbar-animate {
+    0% {
+        background-position: 1% 50%;
+    }
+    50% {
+        background-position: 99% 50%;
+    }
+    100% {
+        background-position: 1% 50%;
+    }
+}
+
+/* responsive (Resize the Chrome Window).*/
+@media (max-width: 1000px) {
+    section {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 20vh 6rem;
+    }
+
+    section .container {
+        align-items: center;
+    }
+
+    section .container h1 {
+        font-size: 40px;
+    }
+
+    section .container p {
+        font-size: 20px;
+    }
+
+    section .card-container {
+        margin-top: 50px;
+    }
+
+    section.about {
+        padding: 20vh 10rem;
+    }
+
+    section.about .container-about p.about-description {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    section.about .container-about .card-wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 20vh 4rem;
+    }
+
+    section .container h1 {
+        font-size: 35px;
+    }
+
+    section .container p {
+        font-size: 18px;
+    }
+
+    section.about {
+        padding: 20vh 9rem;
+    }
+
+    section.about .container-about p.about-description {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 650px) {
+    section {
+        padding: 20vh 2rem;
+    }
+
+    section .container h1 {
+        font-size: 28px;
+    }
+
+    section .container p {
+        font-size: 16px;
+    }
+
+    .nav {
+        padding: 0 10px;
+    }
+
+    .nav ul {
+        gap: 20px;
+    }
+
+    section.about {
+        padding: 20vh 4rem;
+    }
+
+    section.about .container-about p.about-description {
+        font-size: 16px;
+        text-align: center;
+    }
+}

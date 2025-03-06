@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 1 | Landing Page</title>
+    <!-- style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <!-- title -->
+        <h1><a href="index.html">Mobile Legends</a></h1>
+
+        <!-- links and dropdown -->
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <!-- dropdown when hover with mouse -->
+            <li id="hoverDropDown"><a href="#dropdown">Characters</a>
+                <!-- dropdown div and sub-items -->
+                <div class="dropdown" id="dropDown">
+                    <a href="#card-1">Alucard</a>
+                    <a href="#card-2">Beatrix</a>
+                    <a href="#card-3">Gloo</a>
+                </div>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- container for the main heading, short description and (CTA) button. -->
+        <div class="container" id="container">
+            <h1>Welcome to Mobile Legends!</h1>
+            <p>See all your favorite characters from Mobile Legends!</p>
+            <a href="#about"><button class="cta-btn" id="ctaBtn">Learn More</button></a>
+        </div>
+
+        <!-- container for the card and image inside it. -->
+        <div class="card-container" id="cardContainer">
+            <div class="card" id="card">
+                <img src="./img/MLBB_Alucard-1024x576-1-768x432.jpg" alt="" id="cardImg">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <!-- this is where the (CTA) button will lead the user to. -->
+        <div class="container-about" id="container-about">
+            <h1>About</h1>
+            <p class="about-description">This website is all about Mobile Legends! Who's your favorite?</p>
+            <div class="card-wrapper">
+                <div class="about-card" id="card-1">
+                    <div class="about-card-image">
+                        <img src="./img/MLBB_Alucard-1024x576-1-768x432.jpg" alt="">
+                    </div>
+                    <div class="about-card-description">
+                        <h2>Alucard</h2>
+                        <p>Relentless Fighter, perfect for crowd control.</p>
+                    </div>
+                </div>
+                <div class="about-card" id="card-2">
+                    <div class="about-card-image">
+                        <img src="./img/MLBB_Beatrix-768x432.jpg" alt="">
+                    </div>
+                    <div class="about-card-description">
+                        <h2>Beatrix</h2>
+                        <p>Need damage dealer? Beatrix is on the rescue!</p>
+                    </div>
+                </div>
+                <div class="about-card" id="card-3">
+                    <div class="about-card-image">
+                        <img src="./img/MLBB_Gloo-768x432.jpg" alt="">
+                    </div>
+                    <div class="about-card-description">
+                        <h2>Gloo</h2>
+                        <p>Gloo can absorb fatal damage for the team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
